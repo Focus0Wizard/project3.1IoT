@@ -1,11 +1,15 @@
 #include "ServoActuator.h"
 #include "ActuatorServer.h"
 
+const int PIN = 16;
+const int INITIAL_ANGLE = 90;
+const int DELAY_TIME = 15;
+
 const char *SSID = "H_V";
 const char *PASSWORD = "alberto123";
 const char *MQTT_SERVER = "broker.hivemq.com";
 
-ServoActuator servoActuator(16, 90, 15);
+ServoActuator servoActuator(PIN, INITIAL_ANGLE, DELAY_TIME);
 
 void callback(char *topic, byte *payload, unsigned int length)
 {
